@@ -141,7 +141,7 @@ body{
   font-size: var(--fontSize-body-4);
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 300vh;
 }
 
@@ -164,7 +164,6 @@ body.nav-active{
 
 
 /* header */
-.overlay,
 .header .btn{display: none;}
 
 .header{
@@ -176,7 +175,7 @@ body.nav-active{
   padding-block: 40px;
   z-index: 4;
   border-block-end: 1px solid transparent;
-  transition: var(--transition-1);
+  transition: var(--transition-2);
 }
 
 .header.active{
@@ -292,14 +291,58 @@ body.nav-active{
   left: 0;
   transform: translate(-50%) rotate(45deg);
   opacity: 0;
-  transition: var(--transition-1);
+  transition: var(--transition-2);
 }
 
 .navbar-link:is(:hover, :focus-visible, .active) .separator{
   opacity: 1;
 }
 
+.navbar-title{
+  margin-block-end: 15px;
+}
+.navbar-text{
+  margin-block: 10px;
+}
 
+.navbar .body-4{
+  color: var(--quick-silver);
+}
+
+.sidebar-link {
+  transition: var(--transition-2);
+}
+.sidebar-link:is(:hover, :focus-visible){
+  color: var(--gold-crayola);
+}
+
+.navbar .text-center .separator{
+  margin-block: 30px;
+  margin-inline: auto;
+}
+
+.navbar .contact-label{ margin-block-end: 10px;}
+
+
+.navbar::-webkit-slider-thumb{ background-color: var(--white-alpha-10);}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--black-alpha-80);
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-2);
+  z-index: 1;
+}
+
+.overlay .active{
+  opacity: 1;
+  pointer-events: all;
+}
 
 
 /* typography */
@@ -398,3 +441,7 @@ body.nav-active{
 }
 
 .contact-number::after{ bottom: -5px;}
+
+.text-center{
+  text-align: center;
+}
